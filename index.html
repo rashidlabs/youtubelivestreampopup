@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Live</title>
+</head>
+<body>
+    <input type="text" id="url">
+    <button onclick="popup('https://www.youtube.com/embed/' + url.value, 560, 315)">Live Stream</button>
+    <button onclick="popup('https://www.youtube.com/live_chat?is_popout=1&v=' + url.value, 600, 700)">Live Chat</button>
+</body>
+<script>
+    var url = document.getElementById("url");
+
+    function popup(url, width, height) {
+        var left = (screen.width/2)-(width/2);
+        var top = (screen.height/2)-(height/2);
+        return window.open(url, '', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+width+', height='+height+', top='+top+', left='+left);
+    }
+</script>
+</html>
